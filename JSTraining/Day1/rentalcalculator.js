@@ -6,13 +6,13 @@ Every day you rent the car costs $40. If you rent the car for 7 or more days, yo
 Write a code that gives out the total amount for different days(d).
 
 */
-function rentalCarCost(d) {
+function rentalCarCost(noofdays) {
   // Your solution here
-  if(d>=7){
-    return (d*40)-50;
-  }else if(d>=3 && d<7){
-    return (d*40)-20;
+  if(noofdays>=7){
+    return (noofdays*40)-50;
+  }else if(noofdays>=3 && noofdays<7){
+    return (noofdays*40)-20;
   }else{
-    return d*40;
+    return noofdays*40;
   }
 }
