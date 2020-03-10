@@ -16,3 +16,4 @@ function rentalCarCost(noofdays) {
     return noofdays*40;
   }
 }
+
