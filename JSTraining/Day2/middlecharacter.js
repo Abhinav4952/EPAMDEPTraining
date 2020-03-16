@@ -7,10 +7,11 @@ If the word's length is even, return the middle 2 characters.
 
 function getMiddle(s)
 {
-  if(s.length % 2 === 0){
-    return s[(s.length / 2) - 1] + s[s.length / 2];
+  const inputLength=s.length;
+  if(inputLength % 2 === 0){
+    return s[(inputLength / 2) - 1] + s[inputLength / 2];
     } else {
-    return s[Math.floor(s.length / 2)];
+    return s[Math.floor(inputLength/ 2)];
   }
 }
 
