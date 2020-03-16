@@ -8,13 +8,14 @@ Object.prototype.hash = function(string) {
   let arr = string.split('.');
   //console.log(arr);
   let ret = this;
-  for(i = 0; i < arr.length; i++) {
-    if(ret[arr[i]]) {
-      ret = ret[arr[i]];
-    } else {
-      ret = undefined;
-      break;
-    }
+  
+  for (var obj in arr){
+      if(ret[obj]) {
+          ret = ret[obj];
+        } else {
+          ret = undefined;
+          break;
+        }
   }
   return ret;
 }

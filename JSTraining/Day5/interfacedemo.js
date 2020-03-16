@@ -6,10 +6,9 @@ The SantaClausable interface is implemented, if all of the following methods are
 */
 
 function isSantaClausable(obj) {
- return (
-   (typeof obj.sayHoHoHo==='function')
-   &&(typeof obj.distributeGifts=== 'function')
-   &&(typeof obj.goDownTheChimney==='function')
-   );
-}
-
+    
+  var objProperties=Object.getOwnPropertyNames(obj);
+  return (
+      (objProperties.includes('sayHoHoHo'))&&(objProperties.includes('distributeGifts'))&&(objProperties.includes('goDownTheChimney'))
+  )
+ }
