@@ -5,18 +5,12 @@ You have to ensure that spaces in string is a whitespace for real.
 
 */
 
-function countWords(str) {
- var result;
-    str = str.replace(/[^\S\r\n]+/g, ' ');//Transforming all special characters except letters into white spaces
-    str = str.split(" ");
-    result = str.length;
-    
-    for (var index = 0; index < str.length; index++) {
-      if (str[index] === "") {
-        result -= 1;
-      }
-    }
-    
-    return result;    
+function getMiddle(s)
+{
+  const inputLength=s.length;
+  if(inputLength % 2 === 0){
+    return s[(inputLength / 2) - 1] + s[inputLength / 2];
+    } else {
+    return s[Math.floor(inputLength/ 2)];
+  }
 }
-

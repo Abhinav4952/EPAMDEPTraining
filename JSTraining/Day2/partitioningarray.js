@@ -6,11 +6,10 @@ NOTE: the partitioning should be stable; in other words: the ordering of the Fs 
 
 function partitionOn(pred, items) {
     var index=0;
-    for(i=0;i<items.length;i++){
-     
-      if(!pred(items[i])){
-        var temp=items[i];//Storing the false value in a temp variable
-        items.splice(i,1);//deleting the false value from array
+    for(var i in items){
+      if(!pred(i)){
+        var temp=i;//Storing the false value in a temp variable
+        items.splice(items.findIndex(i),1);//deleting the false value from array
         items.splice(index,0,temp);//inserting the false value in the begining
         index++;
       }
