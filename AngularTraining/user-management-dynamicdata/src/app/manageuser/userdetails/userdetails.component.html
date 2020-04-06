@@ -1,0 +1,12 @@
+<div class="card border-primary mb-3" style="max-width: 18rem;margin-right: 10%">
+  <div class="card-header">{{singleuser?.firstName}}</div>
+  <div class="card-body text-primary">
+      <h5 class="card-title activeclass" *ngIf="singleuser?.isDeleted">Active</h5>
+      <h5 class="card-title disabledclass" *ngIf="!singleuser?.isDeleted">Deleted</h5>
+      <p class="card-text">Login id:-{{singleuser?.login}}</p>
+      <p class="card-text">First Name:-{{singleuser?.firstName}}</p>
+      <p class="card-text">Last Name:-{{singleuser?.lastName}}</p>
+      <p class="card-text">Age:-{{singleuser?.age}}</p>
+  </div>
+</div>
+
