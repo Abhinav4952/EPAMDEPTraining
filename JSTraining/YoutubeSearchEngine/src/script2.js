@@ -3,6 +3,11 @@ var utubedata=[];
 var pagetoken;
 var inputVal;
 
+function doit_onkeypress(event){
+    if (event.keyCode == 13 || event.which == 13){
+        loadutubedata('divMsg','js')
+    }
+}
 function loadutubedata(ele,searchterm){
 
     console.log("Loading Home page");
