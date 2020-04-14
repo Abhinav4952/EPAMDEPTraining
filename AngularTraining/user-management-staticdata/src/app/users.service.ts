@@ -19,7 +19,8 @@ export class UsersService {
     { id: 6, name: 'User 6',lastName:'chal', login: 'user1', age: 25,password:'123',isDeleted:true  },
     { id: 7, name: 'User 7',lastName:'chal', login: 'user1', age: 25,password:'123',isDeleted:true  },
     { id: 8, name: 'User 8',lastName:'chal', login: 'user1', age: 25,password:'123',isDeleted:true  }
-  ];  
+  ];
+  
   userBeChanged=new BehaviorSubject<any>(this.users);
   cast=this.userBeChanged.asObservable();
   constructor() { }
