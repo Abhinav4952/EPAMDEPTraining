@@ -1,0 +1,18 @@
+.container {
+    border: 1px solid gray;
+    padding: 5px;
+}
+ div {
+     margin-bottom: 10px;
+ }
+
+ .activeclass{
+    content:"Active";
+    color: green;
+
+ }
+ .disabledclass{
+    content:"Active";
+    color: red;
+    
+ }
