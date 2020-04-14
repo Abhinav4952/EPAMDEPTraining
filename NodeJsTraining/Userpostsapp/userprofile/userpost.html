@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/bootstrap">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div>
+            <img src="/static/images/favicon.ico">
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item " id="nav1">
+                    <a class="nav-link" href="http://localhost:3000/userhome/">Home </a>
+                </li>
+                <li class="nav-item active" id="nav3">
+                    <a class="nav-link" href="#">User Posts<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <div id="user_name">User name</div>
+            </form>
+            <form class="form-inline" action="http://localhost:3000/api/logout" method="POST">
+                <button class="btn btn-secondary btn-sm" type="submit">Logout</button>
+            </form>
+        </div>
+    </nav>
+    <div class="card-deck" id="posts_list">
+    </div>
+    </div>
+    <script>
+        const username = document.cookie.split("=")[1];
+        const url = `http://localhost:3000/api/userPostDetails/${username}`;
+        fetch(url).then((data) => {
+            data.json().then(jsonData => {
+                var user_posts = jsonData;
+                document.getElementById("user_name").innerText = user_posts[0].username;
+                for (var i = 0; i < user_posts.length; i++) {
+                    var div_card = document.createElement('div');
+                    div_card.setAttribute('class', 'card');
+                    div_card.setAttribute('id', user_posts[i].posttitle + '_card');
+                    var card_body = document.createElement('div');
+                    card_body.setAttribute('class', 'card-body');
+                    card_body.setAttribute('id', user_posts[i].posttitle + '_cardbody');
+                    var card_title = document.createElement('h5');
+                    card_title.setAttribute('class', 'card-title');
+                    card_title.textContent = user_posts[i].posttitle;
+                    card_body.appendChild(card_title);
+                    var card_text = document.createElement('p');
+                    card_text.setAttribute('class', 'card-text');
+                    card_text.textContent = user_posts[i].postdescription;
+                    card_body.appendChild(card_text);
+                    div_card.appendChild(card_body);
+                    document.getElementById("posts_list").appendChild(div_card);
+
+
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+
