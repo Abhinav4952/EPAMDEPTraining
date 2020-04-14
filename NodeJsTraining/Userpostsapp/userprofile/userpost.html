@@ -34,11 +34,9 @@
         const url = `http://localhost:3000/api/userPostDetails/${username}`;
         fetch(url).then((data) => {
             data.json().then(jsonData => {
-                console.log(jsonData);
                 var user_posts = jsonData;
                 document.getElementById("user_name").innerText = user_posts[0].username;
                 for (var i = 0; i < user_posts.length; i++) {
-                    console.log(user_posts[i].posttitle);
                     var div_card = document.createElement('div');
                     div_card.setAttribute('class', 'card');
                     div_card.setAttribute('id', user_posts[i].posttitle + '_card');

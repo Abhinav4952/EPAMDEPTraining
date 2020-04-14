@@ -50,9 +50,7 @@
         const address = document.getElementById("address");
         fetch(url).then((data) => {
             data.json().then(jsonData => {
-                console.log(jsonData);
                 const strresult = jsonData.message.split(";")
-                console.log(strresult);
                 name.innerText = "Name:- " + strresult[0].split("=")[1] + " " + strresult[1].split("=")[1];
                 email.innerText = "Email:- " + strresult[3].split("=")[1];
                 age.innerText = "Age:-" + strresult[2].split("=")[1];

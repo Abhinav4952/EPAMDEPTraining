@@ -5,17 +5,19 @@ let findUser = require('../helpers/user-helper');
 let userDetails = require('../helpers/user-retriving');
 let userPostDetails = require('../helpers/userpost-retriving')
 let encrypt = require('../helpers/encryption');
+const authMiddleware = require('../middleware/auth-middleware');
+var path = require('path');
 /* GET users listing. */
 router.get('/', function (req, res, next) {
   res.send('respond with a resource Hello');
 });
 
+
 router.post('/login', function (req, res, next) {
   const cred = req.body;
   const headers = req.headers;
-  console.log(cred);
   if (!cred.username || !cred.password) {
-    
+    // reject
     return res.status(400).send({ status: 'not ok' });
   }
 
@@ -25,7 +27,6 @@ router.post('/login', function (req, res, next) {
     res.cookie('username', cred.username);
     res.cookie('auth_token', auth_key, { httpOnly: true, maxAge: 6000000 });
   }
- 
   if (isValid) {
     res.status(301).header({ Location: '/' }).send({});
   }
@@ -35,7 +36,7 @@ router.post('/login', function (req, res, next) {
 
 });
 
-router.get('/userDetails/:username', function (req, res, next) {
+router.get('/userDetails/:username',authMiddleware, function (req, res, next) {
   const pathParams = req.params;
   const user = userDetails(pathParams.username);
   if (!user) {
@@ -46,7 +47,7 @@ router.get('/userDetails/:username', function (req, res, next) {
   res.send(result);
 });
 
-router.get('/userPostDetails/:username', function (req, res, next) {
+router.get('/userPostDetails/:username',authMiddleware, function (req, res, next) {
   const pathParams = req.params;
   const users = userPostDetails(pathParams.username);
   if (!users) {
@@ -56,7 +57,7 @@ router.get('/userPostDetails/:username', function (req, res, next) {
   res.send(users);
 });
 
-router.post('/logout', function (req, res, next) {
+router.post('/logout',authMiddleware, function (req, res, next) {
   res.clearCookie('auth_token');
   res.clearCookie('username');
   res.status(301).header({ Location: '/' }).send({});
