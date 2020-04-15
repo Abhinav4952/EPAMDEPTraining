@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ActivateUsersComponent } from './ActivateUser.component';
+import { DeleteUserComponent } from './app-deleteuser.component';
 
-describe('F1c1Component', () => {
-  let component: ActivateUsersComponent;
-  let fixture: ComponentFixture<ActivateUsersComponent>;
+describe('F2c1Component', () => {
+  let component: DeleteUserComponent;
+  let fixture: ComponentFixture<DeleteUserComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ActivateUsersComponent ]
+      declarations: [ DeleteUserComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ActivateUsersComponent);
+    fixture = TestBed.createComponent(DeleteUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -23,4 +23,3 @@ describe('F1c1Component', () => {
     expect(component).toBeTruthy();
   });
 });
-

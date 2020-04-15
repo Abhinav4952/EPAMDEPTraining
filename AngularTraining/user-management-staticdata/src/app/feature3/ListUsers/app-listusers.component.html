@@ -2,11 +2,10 @@
   <div class="card-deck">
     <div class="card">
       <div>
-        <div class="card " [ngClass]="(user.isDeleted)?'border-success':'border-danger'" *ngFor="let user of usersList"
-          style="line-height: 50%;">
+        <div class="card linedisplay" [ngClass]="(user.isDeleted)?'border-success':'border-danger'" *ngFor="let user of usersList">
           <div class="card-body">
             <h5 class="card-title">{{user.name}}</h5>
-            <button class="btn btn-primary" (click)="showDetails(user.id)" style="float: right;">Show Details</button>
+            <button class="btn btn-primary btndisplay" (click)="showDetails(user.id)" >Show Details</button>
           </div>
         </div>
       </div>

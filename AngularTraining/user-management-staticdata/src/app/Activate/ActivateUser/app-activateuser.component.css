@@ -9,6 +9,10 @@
     font-size: large;
 }
 
+.btndisplay{
+    float: right;
+}
+
 div {
     margin-bottom: 5px;
 }

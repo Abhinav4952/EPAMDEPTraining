@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { ActivateUserModule } from './Activate/ActivateUser.module';
-import { Feature2Module } from './feature2/feature2.module';
+import { DeleteModule } from './feature2/feature2.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -18,7 +18,7 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     ActivateUserModule,
-    Feature2Module,
+    DeleteModule,
     AppRoutingModule
   ],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DeletedUsersPipe } from './deleted-users.pipe';
-import { ActivateUsersComponent } from './ActivateUser/ActivateUser.component';
+import { ActivateUsersComponent } from './ActivateUser/app-activateuser.component';
 @NgModule({
     declarations: [ActivateUsersComponent, DeletedUsersPipe],
     imports: [

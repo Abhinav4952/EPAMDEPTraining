@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListUsersComponent } from './ListUsers/ListUsers.component';
-import { UserInfoComponent } from './UserInfo/UserInfo.component';
+import { ListUsersComponent } from './ListUsers/app-listusers.component';
+import { UserInfoComponent } from './UserInfo/app-userinfo.component';
 import { RouterModule, Routes } from '@angular/router';
 
-const feature3Routes: Routes = [
+const UserListingRoutes: Routes = [
   {
       path: '', component: ListUsersComponent, 
       children: [
@@ -17,7 +17,7 @@ const feature3Routes: Routes = [
   declarations: [ListUsersComponent, UserInfoComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(feature3Routes)
+    RouterModule.forChild(UserListingRoutes)
   ],
   exports: [ListUsersComponent, UserInfoComponent]
 })

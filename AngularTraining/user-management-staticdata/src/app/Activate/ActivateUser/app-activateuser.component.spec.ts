@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListUsersComponent } from './ListUsers.component';
+import { ActivateUsersComponent } from './app-activateuser.component';
 
-describe('F3c1Component', () => {
-  let component: ListUsersComponent;
-  let fixture: ComponentFixture<ListUsersComponent>;
+describe('F1c1Component', () => {
+  let component: ActivateUsersComponent;
+  let fixture: ComponentFixture<ActivateUsersComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListUsersComponent ]
+      declarations: [ ActivateUsersComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListUsersComponent);
+    fixture = TestBed.createComponent(ActivateUsersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -23,3 +23,4 @@ describe('F3c1Component', () => {
     expect(component).toBeTruthy();
   });
 });
+

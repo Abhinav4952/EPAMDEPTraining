@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivateUsersComponent } from './ActivateUser/ActivateUser.component';
+import { ActivateUsersComponent } from './ActivateUser/app-activateuser.component';
 
 import { DeletedUsersPipe } from './deleted-users.pipe';
 

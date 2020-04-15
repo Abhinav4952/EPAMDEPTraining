@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserInfoComponent } from './UserInfo.component';
+import { UserInfoComponent } from './app-userinfo.component';
 
 describe('F3c2Component', () => {
   let component: UserInfoComponent;
