@@ -1,0 +1,24 @@
+.card-wrapper {
+
+    width: 15rem;
+    
+    margin-left: 10%;
+    
+    }
+.linedisplay{
+    line-height: 50%;
+}
+.btndisplay{
+    float: right;
+}
+.box {
+        border: 1px solid #90def8;
+        border-radius: 20px;
+        padding: 10px;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 20px;
+        font-family: calibri;
+        font-size: large;
+}
+    

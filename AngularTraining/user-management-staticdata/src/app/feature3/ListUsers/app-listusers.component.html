@@ -1,0 +1,20 @@
+<div class="box">
+  <div class="card-deck">
+    <div class="card">
+      <div>
+        <div class="card linedisplay" [ngClass]="(user.isDeleted)?'border-success':'border-danger'" *ngFor="let user of usersList">
+          <div class="card-body">
+            <h5 class="card-title">{{user.name}}</h5>
+            <button class="btn btn-primary btndisplay" (click)="showDetails(user.id)" >Show Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+

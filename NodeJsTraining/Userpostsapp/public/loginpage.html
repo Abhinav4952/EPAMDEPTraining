@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/bootstrap">
+    <style>
+        .box {
+            width: '80%';
+        }
+
+        .center {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Default form login -->
+    <nav class="navbar navbar-light bg-light">
+        <div>
+            <img src="/static/images/favicon.ico">
+        </div>
+    </nav>
+    <div class="center">
+        <form class="text-center border border-light p-5" action="http://localhost:3000/api/login" method="POST"
+            style="align-content: center;">
+            <p class="h4 mb-4">Sign in</p>
+            <input type="text" class="form-control mb-4" placeholder="Username" name="username" required>
+            <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password"
+                name="password" required>
+            <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
+

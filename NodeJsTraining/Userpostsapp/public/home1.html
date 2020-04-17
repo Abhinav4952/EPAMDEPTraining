@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/bootstrap">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div>
+            <img src="/static/images/favicon.ico">
+        </div>
+        <form class="form-inline">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick='gotoLogin()'>Login</button>
+        </form>
+    </nav>
+    <h1>
+        Welcome to UserPosts
+    </h1>
+    <script>
+        function gotoLogin() {
+            location.replace("http://localhost:3000/api/login")
+        }
+    </script>
+</body>
+
+</html>
+

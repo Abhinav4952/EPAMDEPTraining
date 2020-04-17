@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/bootstrap">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div>
+            <img src="/static/images/favicon.ico">
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active" id="nav1">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item" id="nav3">
+                    <a class="nav-link" href="http://localhost:3000/userposts/">User Posts</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <div id="user_name">User email</div>
+            </form>
+            <form class="form-inline" action="http://localhost:3000/api/logout" method="POST">
+                <button class="btn btn-secondary btn-sm" type="submit"> Logout</button>
+            </form>
+        </div>
+    </nav>
+    <h2>Welcome to UserPosts</h2>
+    <div style="border:1px solid red ;width: 20%;">
+        <div id="name">
+            Full name
+        </div>
+        <div id="email">
+            Email
+        </div>
+        <div id="age">
+            Age
+        </div>
+        <div id="address">
+            Address
+        </div>
+    </div>
+    <script>
+        const username = document.cookie.split("=")[1];
+        const url = `http://localhost:3000/api/userDetails/${username}`;
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const age = document.getElementById("age");
+        const address = document.getElementById("address");
+        fetch(url).then((data) => {
+            data.json().then(jsonData => {
+                const strresult = jsonData.message.split(";")
+                name.innerText = "Name:- " + strresult[0].split("=")[1] + " " + strresult[1].split("=")[1];
+                email.innerText = "Email:- " + strresult[3].split("=")[1];
+                age.innerText = "Age:-" + strresult[2].split("=")[1];
+                address.innerText = "Address:-" + strresult[4].split("=")[1];
+                document.getElementById("user_name").innerText = strresult[3].split("=")[1];
+            });
+        });
+    </script>
+</body>
+
+</html>
+

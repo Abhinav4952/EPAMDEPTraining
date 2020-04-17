@@ -1,0 +1,21 @@
+.container {
+    border: 1px solid gray;
+    padding: 5px;
+}
+ div {
+     margin-bottom: 10px;
+ }
+.carddisplay{
+    max-width: 18rem;
+    margin-right: 10%
+}
+ .activeclass{
+    content:"Active";
+    color: green;
+
+ }
+ .disabledclass{
+    content:"Active";
+    color: red;
+    
+ }
