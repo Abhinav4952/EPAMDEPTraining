@@ -8,7 +8,10 @@
     font-family: calibri;
     font-size: large;
 }
+.carddisplay{
+        float: right;
 
+}
 div {
     margin-bottom: 5px;
 }

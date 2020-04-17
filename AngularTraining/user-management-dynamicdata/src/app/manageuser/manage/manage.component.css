@@ -3,7 +3,9 @@
     width: 15rem;
     margin-left: 10%;
 }
-
+.carddisplay{
+    margin-top: 3%;
+}
 .box {
         border: 1px solid #90def8;
         border-radius: 20px;

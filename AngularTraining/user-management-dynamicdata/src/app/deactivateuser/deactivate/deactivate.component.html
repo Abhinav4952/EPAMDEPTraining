@@ -3,8 +3,7 @@
 
     <div class="card-body">
       <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
-      <button type="button" class="btn btn-success" (click)="showDetails(user?.id)" *ngIf="buttondisplay"
-        style="float: right;">Activate</button>
+      <button type="button" class="btn btn-success carddisplay" (click)="showDetails(user?.id)" *ngIf="buttondisplay">Activate</button>
     </div>
   </div>
 </div>

@@ -5,6 +5,10 @@
  div {
      margin-bottom: 10px;
  }
+.carddisplay{
+    max-width: 18rem;
+    margin-right: 10%
+}
 
  .activeclass{
     content:"Active";

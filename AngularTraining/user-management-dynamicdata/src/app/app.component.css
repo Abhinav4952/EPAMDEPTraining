@@ -16,6 +16,13 @@ div {
 .active {
     font-weight: 600;
 }
+.rulerstyle{
+    width: 90%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: none;
+    border-top: 1px solid gainsboro;
+}
 
 .nav-bar, .login-name {
     display: flex;
