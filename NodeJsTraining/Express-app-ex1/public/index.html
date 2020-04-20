@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <script src="/bootstrapjs/bootstrap.js"></script>
+    <link rel="stylesheet" href="/bootstrap/bootstrap.css">
+</head>
+
+<body>
+    <h1>Hello Users</h1>
+    <button type="button" class="btn btn-primary" onclick="staticdata()">Click to get User Details</button>
+    <button type="button" class="btn btn-primary" onclick="getDataUsingAPI()">Click to get data from Api</button>
+    <div id="apiresult"></div>
+    <script>
+        function staticdata() {
+            location.replace("http://localhost:3000/users/")
+        }
+        function getDataUsingAPI() {
+            const username = 'user1';
+            const url = `http://localhost:3000/users/${username}`;
+            const result = document.getElementById('apiresult');
+            fetch(url).then((data) => {
+                data.json().then(jsonData => {
+                    console.log(jsonData);
+                    result.innerText = jsonData.message;
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
+
