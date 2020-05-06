@@ -1,0 +1,29 @@
+<form class="container" [formGroup]="createForm" >
+  <div class="form-group" >
+    <label for="exampleFormControlInput1">First Name</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1"  formControlName="firstName">
+    <div style="color: red;" *ngIf="createForm.get('firstName').valid && !createForm.get('firstName').valid">First Name is Required</div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput2">Last Name</label>
+    <input type="text" class="form-control" id="exampleFormControlInput2" formControlName="lastName">
+    <div style="color: red;" *ngIf="createForm.get('lastName').valid && !createForm.get('lastName').valid">First Name is Required</div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput3">Login </label>
+    <input type="text" class="form-control" id="exampleFormControlInput3" formControlName="login">
+    <div style="color: red;" *ngIf="createForm.get('login').valid && !createForm.get('login').valid">First Name is Required</div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput3">Password</label>
+    <input type="text" class="form-control" id="exampleFormControlInput3" formControlName="password">
+    <div style="color: red;" *ngIf="createForm.get('password').valid && !createForm.get('password').valid">First Name is Required</div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput4">Age</label>
+    <input type="number" class="form-control" id="exampleFormControlInput4" formControlName="age" >
+    <div style="color: red;" *ngIf="createForm.get('age').valid && !createForm.get('age').valid">First Name is Required</div>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="createUser()" [disabled]="!createForm.valid">Submit</button>
+</form>
+
